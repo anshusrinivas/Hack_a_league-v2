@@ -41,7 +41,7 @@ def pac_id():
                 long = dic['longitude'][result-1]
                 phone_number = dic['phone_number'][result-1]
                 return render_template('result.html', driver_name=driver_name, transit_stage=transit_stage,
-                                       latitude=lat, longitude=long, phone_number=phone_number)
+                                       latitude=lat, longitude=long, contact_no=phone_number)
             else:
                 return render_template('customer.html', error='Package not found')
         else:
