@@ -19,7 +19,7 @@ def login():
         user = users_df[(users_df['username'] == username) & (users_df['password'] == password)]
         
         if not user.empty:
-            return render_template('customer.html', username=username)  # Pass username to template
+            return render_template('customer.html', username=username) 
         else:
             return render_template('login_page.html', error="Invalid credentials")
     
@@ -33,7 +33,7 @@ def pac_id():
         re = users_df[(users_df['package_id'] == package_id) & (users_df['secret_key'] == secret_key)]
         if not re.empty:
             result = int(package_id[3:])
-            dic = packages_df.to_dict(orient='list')  # Change 'list' here
+            dic = packages_df.to_dict(orient='list')  
             if result <= len(dic['driver_name']):
                 driver_name = dic['driver_name'][result-1]
                 transit_stage = dic['state'][result-1]
